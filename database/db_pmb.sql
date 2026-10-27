@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS pendaftar (
     id_pendaftar INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nik CHAR(16) NOT NULL UNIQUE,
     nama_lengkap VARCHAR(100) NOT NULL,
+    nama_panggilan VARCHAR(50) NOT NULL,
     tempat_lahir VARCHAR(60) NOT NULL,
     tanggal_lahir DATE NOT NULL,
     jenis_kelamin ENUM('Laki-laki', 'Perempuan') NOT NULL,
@@ -24,6 +25,6 @@ CREATE TABLE IF NOT EXISTS pendaftar (
 
 -- Data contoh opsional. Hapus tanda komentar jika ingin digunakan.
 -- INSERT INTO pendaftar
--- (nik, nama_lengkap, tempat_lahir, tanggal_lahir, jenis_kelamin, agama, email, no_hp, alamat, asal_sekolah, tahun_lulus, program_studi, jalur_pendaftaran)
+-- (nik, nama_lengkap, nama_panggilan, tempat_lahir, tanggal_lahir, jenis_kelamin, agama, email, no_hp, alamat, asal_sekolah, tahun_lulus, program_studi, jalur_pendaftaran)
 -- VALUES
--- ('3573010101080001', 'Alya Putri Ramadhani', 'Malang', '2008-01-01', 'Perempuan', 'Islam', 'alya@example.com', '81234567890', 'Jl. Merdeka No. 10, Malang', 'SMA Cendekia Malang', 2026, 'Sistem Informasi', 'Reguler');
+-- ('3573010101080001', 'Alya Putri Ramadhani', 'Alya', 'Malang', '2008-01-01', 'Perempuan', 'Islam', 'alya@example.com', '81234567890', 'Jl. Merdeka No. 10, Malang', 'SMA Cendekia Malang', 2026, 'Sistem Informasi', 'Reguler');

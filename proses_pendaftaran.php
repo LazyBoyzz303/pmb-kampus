@@ -17,6 +17,7 @@ if (!hash_equals($_SESSION['csrf_token'] ?? '', $_POST['csrf_token'] ?? '')) {
 $data = [
     'nik' => trim($_POST['nik'] ?? ''),
     'nama_lengkap' => trim($_POST['nama_lengkap'] ?? ''),
+    'nama_panggilan' => trim($_POST['nama_panggilan'] ?? ''),
     'tempat_lahir' => trim($_POST['tempat_lahir'] ?? ''),
     'tanggal_lahir' => trim($_POST['tanggal_lahir'] ?? ''),
     'jenis_kelamin' => trim($_POST['jenis_kelamin'] ?? ''),
@@ -79,9 +80,9 @@ if ($errors) {
 try {
     $pdo = getConnection();
     $sql = 'INSERT INTO pendaftar
-        (nik, nama_lengkap, tempat_lahir, tanggal_lahir, jenis_kelamin, agama, email, no_hp, alamat, asal_sekolah, tahun_lulus, program_studi, jalur_pendaftaran)
+        (nik, nama_lengkap, nama_panggilan, tempat_lahir, tanggal_lahir, jenis_kelamin, agama, email, no_hp, alamat, asal_sekolah, tahun_lulus, program_studi, jalur_pendaftaran)
         VALUES
-        (:nik, :nama_lengkap, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :agama, :email, :no_hp, :alamat, :asal_sekolah, :tahun_lulus, :program_studi, :jalur_pendaftaran)';
+        (:nik, :nama_lengkap, :nama_panggilan, :tempat_lahir, :tanggal_lahir, :jenis_kelamin, :agama, :email, :no_hp, :alamat, :asal_sekolah, :tahun_lulus, :program_studi, :jalur_pendaftaran)';
     $statement = $pdo->prepare($sql);
     $statement->execute($data);
 

@@ -49,6 +49,13 @@ const DB_PASS = '';
 
 7. Buka `http://localhost/pmb-kampus/`.
 
+Jika database sudah digunakan sebelum kolom nama panggilan ditambahkan, jalankan perintah berikut di phpMyAdmin untuk memperbarui tabel tanpa menghapus data:
+
+```sql
+ALTER TABLE pendaftar
+ADD COLUMN nama_panggilan VARCHAR(50) NOT NULL DEFAULT '' AFTER nama_lengkap;
+```
+
 ## Alur program
 
 1. `index.php` menampilkan formulir pendaftaran.

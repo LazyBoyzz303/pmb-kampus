@@ -103,6 +103,16 @@ unset($_SESSION['errors'], $_SESSION['success']);
                             <div class="invalid-feedback">Nama lengkap wajib diisi.</div>
                         </div>
                         <div class="col-md-6">
+                            <label for="nama_panggilan" class="form-label">Nama panggilan <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nama_panggilan" name="nama_panggilan" value="<?= old('nama_panggilan') ?>" maxlength="50" placeholder="Nama yang biasa digunakan" required>
+                            <div class="invalid-feedback">Nama panggilan wajib diisi.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nama_panggilan" class="form-label">Nama panggilan <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nama_panggilan" name="nama_panggilan" value="<?= old('nama_panggilan') ?>" maxlength="50" placeholder="Nama yang biasa digunakan" required>
+                            <div class="invalid-feedback">Nama panggilan wajib diisi.</div>
+                        </div>
+                        <div class="col-md-6">
                             <label for="tempat_lahir" class="form-label">Tempat lahir <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?= old('tempat_lahir') ?>" maxlength="60" required>
                             <div class="invalid-feedback">Tempat lahir wajib diisi.</div>

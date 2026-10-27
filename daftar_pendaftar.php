@@ -8,7 +8,7 @@ $databaseError = null;
 
 try {
     $pdo = getConnection();
-    $registrants = $pdo->query('SELECT id_pendaftar, nik, nama_lengkap, asal_sekolah, program_studi, jalur_pendaftaran, tanggal_daftar FROM pendaftar ORDER BY id_pendaftar DESC')->fetchAll();
+    $registrants = $pdo->query('SELECT id_pendaftar, nik, nama_lengkap, nama_panggilan, asal_sekolah, program_studi, jalur_pendaftaran, tanggal_daftar FROM pendaftar ORDER BY id_pendaftar DESC')->fetchAll();
 } catch (PDOException $exception) {
     $databaseError = 'Database belum dapat diakses. Periksa config/database.php dan impor database/db_pmb.sql.';
 }
@@ -45,7 +45,7 @@ try {
                     <tr>
                         <td><?= $index + 1 ?></td>
                         <td><span class="registration-number">PMB-<?= date('Y', strtotime($row['tanggal_daftar'])) ?>-<?= str_pad((string) $row['id_pendaftar'], 4, '0', STR_PAD_LEFT) ?></span></td>
-                        <td><strong><?= e($row['nama_lengkap']) ?></strong><div class="small text-secondary"><?= e(substr($row['nik'], 0, 4)) ?>********<?= e(substr($row['nik'], -4)) ?></div></td>
+                        <td><strong><?= e($row['nama_lengkap']) ?></strong><div class="small text-secondary">Panggilan: <?= e($row['nama_panggilan']) ?></div><div class="small text-secondary"><?= e(substr($row['nik'], 0, 4)) ?>********<?= e(substr($row['nik'], -4)) ?></div></td>
                         <td><?= e($row['asal_sekolah']) ?></td>
                         <td><?= e($row['program_studi']) ?></td>
                         <td><span class="badge rounded-pill text-bg-light border"><?= e($row['jalur_pendaftaran']) ?></span></td>
